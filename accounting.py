@@ -1,7 +1,9 @@
 def customer_pay(customer, melons, did_pay):
   melon_cost = 1.00
+  count = 0
   customer_expected = melons * melon_cost
   if customer_expected != did_pay:
+      count += 1
       print(f"{customer} paid ${did_pay:.2f},",
             f"expected ${customer_expected:.2f}"
             )
@@ -16,4 +18,6 @@ for line in the_file:
     melons = words[2]
     amount = words[3]
 
-    customer_pay(customer, float(melons), float(amount))
+    final_count = str(customer_pay(customer, float(melons), float(amount)))
+
+print(final_count + " customers have not paid the corrent amount.")
